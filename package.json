@@ -1,0 +1,26 @@
+{
+  "name": "team",
+  "version": "1.0.0",
+  "description": "blog website project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arpit160/team.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arpit160/team/issues"
+  },
+  "homepage": "https://github.com/arpit160/team#readme",
+  "dependencies": {
+    "bootstrap-icons": "^1.4.0",
+    "ejs": "^3.1.6",
+    "ejs-mate": "^3.0.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}
