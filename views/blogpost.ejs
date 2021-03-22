@@ -1,123 +1,62 @@
 <%- layout('layout.ejs') %>
-<style>
-    .fc {
-  padding: 20px;
-  font-size: 30px;
-  height:50px;
-  width: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-}
-
-.fa:hover {
-  opacity: 0.7;
-}
 
 
-.fa-facebook {
-  background: #3B5998;
-  color: white;
-}
 
-.fa-instagram
- {
-  background: #8a3ab9;
-  color:white;
- }
-
-.fa-twitter {
-  background: #55ACEE;
-  color: white;
-}
-</style>
-<div class="container mt-5 mb-5">
-<div class="row">
-    <div class="col-9 pt-3 shadow-lg mx-auto"  style="background-color: #FAF9F6;">
-        <div class="card">
-            
-                <img class="card-img-top col-4" src="/images/reg.jpg" alt="Card image cap">
-                
-                <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                
-                <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-                </div>
-        </div>
-        <!-- <div class="card-body d-flex flex-row  justify-content-between align-items-center border mb-5 mt-5 p-1 px-2">
-          <img src="/images/avatar.jpg" class="img-fluid" style="width:6%; border-radius: 50%;">
-          <form class="d-flex  flex-row  justify-content-around align-items-center rounded" style="height:100%; width:90%; margin:0;">
-            <input type="text" class="form-control" style="width:85%;" placeholder="Add a Comment">
-            <button type="button" class="btn btn-primary" style="width: 10%;">Add</button>
-          </form>
-        </div>
-
-        <div class="row mb-1 border-bottom mx-2 pt-1" style="background-color: #feeafa;">
-          <div class="col-1">
-              <img src="images/avatar.jpg" class="img-fluid rounded">
-          </div>
-          <div class="col-11">
-            <div>
-              <small><span class="text-primary"><strong>Arpit Singhal</strong></span> <span class="ml-3 text-muted"> 9 days ago</span></small>
-            </div>
-            <div class="my-1">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aperiam tempore veniam culpa consequuntur commodi id fuga minima maiores assumenda, exercitationem sequi omnis illum repellendus reiciendis sint deserunt, nulla hic.
-            </div>
-            <div class="d-flex justify-content-end">
-              <small>
-              <strong>
-              <span class="mr-3 text-primary">Like</span>
-              <span class="mr-3 text-primary">DisLike</span>
-              </strong>
-              </small>
-            </div>
-          </div>
-        </div>
-        <div class="row mb-1 border-bottom mx-2 pt-1" style="background-color: #feeafa;">
-          <div class="col-1">
-              <img src="images/avatar.jpg" class="img-fluid rounded">
-          </div>
-          <div class="col-11">
-            <div>
-              <small><span class="text-primary"><strong>Arpit Singhal</strong></span> <span class="ml-3 text-muted"> 9 days ago</span></small>
-            </div>
-            <div class="my-1">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aperiam tempore veniam culpa consequuntur commodi id fuga minima maiores assumenda, exercitationem sequi omnis illum repellendus reiciendis sint deserunt, nulla hic.
-            </div>
-            <div class="d-flex justify-content-end">
-              <small>
-              <strong>
-              <span class="mr-3 text-primary">Like</span>
-              <span class="mr-3 text-primary">DisLike</span>
-              </strong>
-              </small>
-            </div>
-          </div>
-        </div> -->
-        <small><div id="disqus_thread" class="p-2 mt-5"></div></small>
-      </div>
+<div class="container mt-5 p-5">
+  <div>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/blogpost/Comments">Comments</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Edit</a>
+      </li>
+    </ul>
+  </div>
+  <div class="row">
+  <div class="col-8">
+  <div class="m-3">
+   <span style="font-size: x-large;"> Heading</span>
+  </div>
+  <div class="m-3">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, animi obcaecati praesentium rerum cupiditate voluptates, et quia modi ex tenetur iusto blanditiis voluptate, ea dolores. Nesciunt itaque rerum dignissimos placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quae culpa quam laudantium numquam, facilis facere maxime sunt deserunt, voluptatibus sed ut esse, consequuntur nesciunt odit minima dolorem rem ipsam.
+  </div>
+  <div class="m-3">
+    info
+  </div>
+  <div class="m-3">
+    likes dislikes
+  </div>
+  </div>
+  <div class="col-4">
+   <div class="mt-4">
+     Likes:31
+   </div>
+   <div>
+     dislikes:32
+   </div>
+   <hr class="mb-1 mt-1">
+   <div>
+     Rate this Post
+   </div>
+   <div>
+     <i class="fa fa-star"></i>
+     <i class="fa fa-star"></i>
+     <i class="fa fa-star"></i>
+   </div>
+   <hr class="mb-2 mt-2">
+   <div>
+     <div>
+       Download this Post
+     </div>
+     <div>
+       Suggestions
+     </div>
+   </div>
+  </div>
+  </div>
 </div>
-</div>
-<script>
-  /**
-  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-  /*
-  var disqus_config = function () {
-  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-  };
-  */
-  (function() { // DON'T EDIT BELOW THIS LINE
-  var d = document, s = d.createElement('script');
-  s.src = 'https://comments-9lx5zrzo6b.disqus.com/embed.js';
-  s.setAttribute('data-timestamp', +new Date());
-  (d.head || d.body).appendChild(s);
-  })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+

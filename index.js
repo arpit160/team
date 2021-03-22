@@ -30,6 +30,14 @@ app.get('/blogpost',(req,res)=>
     res.render("blogpost.ejs");
 })
 
+app.get('/profile',(req,res)=>
+{
+    res.render("profile.ejs");
+})
+app.get('/comments',(req,res)=>
+{
+    res.render("comments.ejs");
+})
 let port=process.env.port || 3000;
 
 
