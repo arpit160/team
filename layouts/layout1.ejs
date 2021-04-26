@@ -1,0 +1,23 @@
+<body style="margin:0; padding:0; box-sizing: border-box;">
+  <div style="display: flex;  border: 1px solid black; padding: 15px; background-color: beige;">
+    <span style="width: 50%; padding-left: 10%;">
+        MyBlog
+    </span>
+        
+    <div style="width: 50%; display: flex; justify-content: space-around;">
+
+    <div><a style="text-decoration: none;" href="/mainpage/1">Home</a></div>
+    <div><a style="text-decoration: none;" href="/allposts/<%= user._id %>">My blogs</a></div>
+    <div><a style="text-decoration: none;" href="/addpost">Add blogs</a></div>
+    <div><a style="text-decoration: none;" href="/profile">View Profile</a></div>
+    <div><a style="text-decoration: none;" href="/editprofile">Edit Profile</a></div>
+    
+    <span>
+      <a href="/logout">Logout</a>
+    </span>
+    </div>
+</div>
+
+  <%- body %> 
+
+</body>

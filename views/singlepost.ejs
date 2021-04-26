@@ -1,0 +1,113 @@
+<%- layout('../layouts/layout1.ejs') %>
+
+<div style="margin-top: 50px; width:80%; margin-left: 10%; display: flex; margin-bottom: 60px;">
+    <div style="border: 1px solid black; width: 70%;  padding: 10px;">
+        <h2 style="margin-left: 20px;"><%= post.topic %> </h2>
+        <div style="width: 100%; display: flex;">
+            <div style="margin-left: 20px;">Category-<%= post.category %> </div>
+            <div style="margin-left: 65%;">Posted on- <%= post.date %> </div>
+        </div>
+        
+        <hr>
+        <div style="padding:20px"><%= post.content %> </div>
+        <div style="text-align: right; padding-bottom: 10px; padding-right: 10px;">
+            <% if (post.author) { %>
+                <div><i style="margin-right:5px;">by</i><%= post.author.username %> </div>
+            <% } %>
+        </div>
+        <div style="border-top:1px solid black; padding: 5px; display: flex; justify-content: flex-end; padding-top: 15px;">
+            <div><button style="cursor:pointer; " class="clike">Like <span class="cl" style="border-left:1px solid black; margin-left: 2px; padding-left: 5px;"><%= likes %> </span></button></div>
+            <div style="margin-left: 10px;" class="cdislike"><button style="cursor:pointer; ">Dislike <span class="cd" style="border-left:1px solid black; margin-left: 2px; padding-left: 5px;"><%= dislikes %> </span> </button></div>
+        </div>
+    </div>
+        
+        
+        
+    <div style=" width: 28%; margin-left: 2%; padding: 10px; padding-top: 0;">
+        <div>
+            Add a Comment
+        </div>
+        <div>
+            <form action="/writecomment/<%= post._id %> " method="post">
+                <input type="text" name="comment">
+                <button role="submit">Add Comment</button>
+            </form>
+        </div>
+        <div style="max-height: 30vh; overflow-y: scroll; border: 1px solid black;">
+            
+            <% for( let index = 0; index < comments.length; index++ ) { %>
+                <div style="border: 2px solid black; padding:5px; margin:5px;">
+                    <div>
+                        <%= comments[index].comment %> 
+                    </div>
+                    <div style="margin-top: 5px;">
+                        by- <%= comments[index].commentauthor.username %> 
+                    </div>
+                </div>
+            
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<div style="margin-left: 10%;">
+    <h3>Related Posts</h3>
+</div>
+
+<div style="margin-top:10px; width: 60%; margin-left: 10%; margin-bottom: 10%;">
+    <% for( let index = 0; index < relatedposts.length; index++ ) { %>
+    <div style="border: 1px solid black; padding:5px; margin-bottom: 3px; display: flex; justify-content: space-between;">
+    Topic:<%= relatedposts[index].topic %>
+    <a href="/singlepost/<%= relatedposts[index]._id %> ">View</a> 
+    </div>
+    <% } %>
+</div>
+<script>
+    cl=document.querySelector('.cl')
+    cd=document.querySelector('.cd')
+
+    async function putcolor()
+    {
+        a=await fetch(`/check/<%= post._id %>`);
+        a=await a.json()
+        if(a.final=='like')
+        cl.style.color='blue'
+        else if(a.final=='dislike')
+        cd.style.color='blue'
+
+        console.log(a)
+    }
+    putcolor();
+    
+    document.querySelector('.clike').addEventListener('click',async()=>
+    {
+        result=await fetch(`/like/<%= post._id %>`)
+        result=await result.json()
+        cd.innerText=result.ans2
+        cl.innerText=result.ans1
+        final=result.final;
+        cd.style.color='black'
+        cl.style.color='black'
+        if(final=='like')
+        cl.style.color='blue'
+        else if(final=='dislike')
+        cd.style.color='blue'
+    })
+    
+    document.querySelector('.cdislike').addEventListener('click',async()=>
+    {
+        result=await fetch(`/dislike/<%= post._id %>`)
+        result=await result.json()
+        cd.innerText=result.ans2
+        cl.innerText=result.ans1
+        cd.style.color='black'
+        cl.style.color='black'
+        final=result.final
+        if(final=='like')
+        cl.style.color='blue'
+        else if(final=='dislike')
+        cd.style.color='blue'
+    })
+    
+    
+</script>

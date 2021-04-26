@@ -1,0 +1,14 @@
+<%- layout('../layouts/layout1.ejs') %>
+<div style="width: 50%; margin: auto; margin-top: 50px; padding: 10px; border: 1px solid black; max-height: 70vh; overflow-y: scroll;">
+    <% for( let index = 0; index < posts.length; index++ ) { %>
+     <div style="display: flex; margin-bottom: 10px; padding: 3px;">
+         <div style="width: 90%;">
+          <a style="text-decoration: none; color: black;" href="/singlepost/<%= posts[index]._id %> "><%= posts[index].topic %></a> 
+         </div>
+         <div style="width: 10%;">
+          <a href="/deletepost/<%= posts[index]._id %> ">Delete Post</a>
+         </div>
+     </div>
+     <hr>
+    <% } %>
+</div>

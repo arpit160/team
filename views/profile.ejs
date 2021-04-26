@@ -1,54 +1,31 @@
-<%- layout('layout.ejs') %>
+<%- layout('../layouts/layout1.ejs') %>
 
-<div class="container p-4">
-    <div class="row">
-    <div class="col-3">
-    <div class="m-4 mt-5 rounded">
-    <img src="/images/avatar.jpg" class="img-fluid" style="width: 50%;">
+<h2 style="margin-left: 25%; margin-top: 50px;">
+    <%= user.username %> 
+</h2>
+<div style="display: flex; border: 1px solid black; width:50%; margin:auto; margin-top: 100px; padding: 50px;">
+    <div style="width: 25%;">
+      Profile Photo
     </div>
-    <div class="m-4">
-        Arpit Singhal
-        <div>
-            @singhalarpit160
-        </div>
-    </div>
-    
-    <div class="m-2 ml-4">
-        india
-    </div>
-    <div class="m-2 ml-4">
-        facebook
-    </div>
-    <hr>
-    </div>
-    <div class="col-8">
-    <div class="m-5 ml-3 border rounded shadow-lg p-3  ">
-        <div>
-            Skills
-        </div>
-        <hr>
-        <div>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, unde voluptate reiciendis, dolores corrupti nobis voluptatum nesciunt aspernatur expedita numquam doloremque? Provident harum saepe quos veritatis pariatur totam mollitia atque?
-        </div>
-    </div>
-    <div class="m-5 ml-3 border rounded shadow-lg p-3 ">
-        <div>
-            Skills
-        </div>
-        <hr>
-        <div>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, unde voluptate reiciendis, dolores corrupti nobis voluptatum nesciunt aspernatur expedita numquam doloremque? Provident harum saepe quos veritatis pariatur totam mollitia atque?
-        </div>
-    </div>
-    <div class="m-5 ml-3 border rounded shadow-lg p-3 ">
-        <div>
-            Skills
-        </div>
-        <hr>
-        <div>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus, unde voluptate reiciendis, dolores corrupti nobis voluptatum nesciunt aspernatur expedita numquam doloremque? Provident harum saepe quos veritatis pariatur totam mollitia atque?
-        </div>
-    </div>
-    </div>
+    <div style="width: 75%;">
+      <div style="margin-bottom: 10px;">
+        <span>Name:</span>
+        <span><%= user.username %> </span>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <span>Email Address:</span><span><%= user.email %> </span>4
+      </div>
+      <div style="margin-bottom: 10px;">
+          <span>Phone Number:</span><span><%= user.phone %></span>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <span>City:</span><span><%= user.city %></span>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <span>State:</span><span><%= user.state %></span>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <span>Country:</span><span><%= user.country %></span>
+      </div>
     </div>
 </div>

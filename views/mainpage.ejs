@@ -1,0 +1,73 @@
+<body style="margin: 0; padding: 0; box-sizing: border-box;">
+    <div style="display: flex;  border: 1px solid black; padding: 15px; background-color: beige;">
+        <div style="width: 50%; display: flex; justify-content: space-around;">
+        <span>
+            MyBlog
+        </span>
+        <span>
+            <form method="POST" action="/search">
+              <input type="text" name="category" placeholder="search by category">
+              <button role="submit">Search</button>
+            </form>
+        </span>
+        </div>  
+        <div style="width: 50%; display: flex; justify-content: space-around;">
+    
+        <div><a style="text-decoration: none;" href="/allposts/<%= user._id %>">My blogs</a></div>
+        <div><a style="text-decoration: none;" href="/addpost">Add blogs</a></div>
+        <div><a style="text-decoration: none;" href="/profile">View Profile</a></div>
+        <div><a style="text-decoration: none;" href="/editprofile">Edit Profile</a></div>
+        
+        <span>
+          <a href="/logout">Logout</a>
+        </span>
+        </div>
+    </div>
+    <div>
+    <h1 style="text-align: center; margin-top: 50px;">All posts</h1>
+    </div>
+    
+    <div style="display: flex; flex-wrap: wrap; margin-left: 50px; min-height: 40vh;">
+    
+        <% for( let index = 0; index < posts.length; index++ ) { %>
+            <div  style="width: 500px; height: 100px; border: 2px solid black; margin:10px; padding:10px;">
+                
+                <div>
+                    Topic:<%= posts[index].topic %> 
+                </div>
+                <div>
+                    category:<%= posts[index].category %> 
+                </div>
+                <% if (posts[index].author) { %>
+                    <div>
+                        author:<%= posts[index].author.username %> 
+                    </div>
+                <% } %>
+                <div>
+                    Date:<%= posts[index].date %> 
+                </div>
+                <div>
+                    <a href="/singlepost/<%= posts[index]._id %> ">View Post</a>
+                </div>
+            </div>
+        <% } %>
+    </div>
+    <div style="display: flex; justify-content: center; margin-top: 60px; margin-bottom: 50px;">
+        <% for( let index = 1; index <=10; index++ ) { %>
+         <span style="border: 1px solid black; padding: 2px;"><a href="/mainpage/<%= index %> "><%= index %> </a></span>
+        <% } %>
+    </div>
+
+    <script>
+        document.querySelector('.c2').addEventListener('click',()=>
+        {
+            var a=document.querySelector('.c1');
+    
+                if(a.style.display=='')
+                a.style.display='none';
+                else
+                a.style.display=''
+    
+        })
+    </script>
+</body>

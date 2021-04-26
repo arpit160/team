@@ -1,38 +1,70 @@
-<%- layout('layout.ejs') %>
-
-<div class="container">
-    <div class="row">
-        <div class="col-6" style="margin-top:5%;" >
-            <img src="/images/reg1.jpg" class="img-fluid" style="height: 110%;">
-        </div>
-        <div class="col-6"  style="margin-top: 5%;">
-            <form style="background-color: #e5e5e5; padding: 5%; padding-bottom: 7%;" class="shadow  rounded">
-                <h2 style="margin-bottom: 3%;">Register</h2>
-                <div class="row">
-                    <div class="form-group col-6">
-                        <label for="formGroupExampleInput1">First Name</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput1">
-                    </div>
-                    <div class="form-group col-6">
-                        <label for="formGroupExampleInput2">last Name</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput2">
-                    </div>
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-        </div>
-        </div>
+<div style="margin-top: 50px; text-align: center;">
+  <h4><%= message %> </h4>
 </div>
+<h2 style="text-align: center; margin-top: 40px;">Register</h2>
+<div style="border: 1px solid black; padding: 10px; display: flex; flex-direction: column; align-items:center; width:25%; margin-left: 37%;">
+    <form method="post" action="/register">
+      <div style="margin-bottom: 10px;">
+        <label for="name">Name</label>
+        <input class="c1" style="display:block;" type="text" id="name" name="username">
+      </div>
+      <div  style="margin-bottom: 10px;">
+        <label for="email">Email</label>
+        <input class="c1" style="display:block;" type="email" id="email" name="email">
+      </div>
+      
+      <!-- <d style="margin-bottom: 10px;"iv>
+        <label for="Profileimage">Profile Image</label>
+        <input style="display:block;" type="file" id="Profileimage">
+      </div> -->
+      <div  style="margin-bottom: 10px;">
+        <label for="phone">phone</label>
+        <input class="c1" style="display:block;" type="tel" id="phone" name="phone">
+      </div>
+      <div  style="margin-bottom: 10px;">
+        <label for="city">city</label>
+        <input class="c1" style="display:block;" type="text" id="city" name="city">
+      </div>
+      <div  style="margin-bottom: 10px;">
+        <label for="state">state</label>
+        <input class="c1" style="display:block;" type="text" id="state" name="state">
+      </div>
+      <div  style="margin-bottom: 10px;">
+        <label for="country">country</label>
+        <input class="c1" style="display:block;" type="text" id="country" name="country">
+      </div>
+      <div  style="margin-bottom: 10px;">
+        <label for="password">Password</label>
+        <input class="c1" style="display:block;" type="password" id="password" name="password">
+      </div>
+      <div  style="margin-bottom: 10px;">
+        <label for="confirm-password">Confirm Password</label>
+        <input class="c1" style="display:block;" type="password" id="confirm-password" name="confirmpassword">
+      </div>
+      <button role="submit" style="cursor: pointer;">Submit</button>
+    </form>
+</div>
+<div style="text-align: center; margin-top: 50px;">
+  <button><a style="text-decoration: none;" href="/">Home</a></button>
+</div>
+<script>
+  
+  document.querySelector('button').addEventListener('click',(e)=>
+  {
+    a=document.querySelector('#password').value
+    b=document.querySelector('#confirm-password').value
+    if(a!=b)
+    {e.preventDefault();
+      alert("Password Mismatch")}
+
+    arr=document.querySelectorAll('.c1')
+    for(i=0 ;i<arr.length;i++)
+    {
+      if(arr[i].value=='')
+      { e.preventDefault();
+        alert("Field cannot be empty")
+        break;
+      }
+    }
+  })
+</script>

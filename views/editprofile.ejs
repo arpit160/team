@@ -1,0 +1,31 @@
+<%- layout('../layouts/layout1.ejs') %>
+<h2 style="text-align: center; margin-top: 50px;">Edit Profile</h2>
+<div style="border: 1px solid black; padding: 10px; display: flex; flex-direction: column; align-items:center; width:25%; margin-left: 37%;">
+    <form method="post" action="/editprofile">
+      <div style="margin-bottom: 10px; margin-top: 10px;">
+        <label for="email">Email</label>
+        <input style="display: block;" type="email" id="email" name="email" value="<%= data.email %> ">
+      </div>
+      <!-- <div> style="margin-bottom: 10px;"
+        <label for="Profileimage">Profile Image</label>
+        <input style="display: block;" type="file" id="Profileimage">
+      </div> -->
+      <div style="margin-bottom: 10px;">
+        <label for="phone">phone</label>
+        <input style="display: block;" type="tel" id="phone" name="phone" value="<%= data.phone %> ">
+      </div>
+      <div style="margin-bottom: 10px;">
+        <label for="city">city</label>
+        <input style="display: block;" type="text" id="city" name="city" value="<%= data.city %> ">
+      </div>
+      <div style="margin-bottom: 10px;">
+        <label for="state">state</label>
+        <input style="display: block;" type="text" id="state" name="state" value="<%= data.state %> ">
+      </div>
+      <div style="margin-bottom: 10px;">
+        <label for="country">country</label>
+        <input style="display: block;" type="text" id="country" name="country" value="<%= data.country %> ">
+      </div>
+      <button role="submit">Submit</button>
+    </form>
+</div>
